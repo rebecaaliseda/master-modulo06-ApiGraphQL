@@ -3,9 +3,29 @@ import { CharacterEntityApi } from './character-collection.api-model';
 export const getCharacterCollection = async (): Promise<
   CharacterEntityApi[]
 > => {
-  const response = await fetch('http://localhost:3000/api/character');
+  const response = await fetch('https://rickandmortyapi.com/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: `
+          query {
+            characters {
+              results {
+                id
+                name
+                status
+                species
+                image
+              }
+            }
+          }
+        `,
+    }),
+  });
 
   const data = await response.json();
 
-  return data.results;
+  return data.data.characters.results;
 };

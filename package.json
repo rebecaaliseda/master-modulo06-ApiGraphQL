@@ -1,17 +1,15 @@
 {
   "name": "06-rest-api-01-concepts",
   "version": "1.0.0",
-  "description": "Rest API demos",
+  "description": "Rick and Morty GraphQL",
   "type": "module",
   "scripts": {
-    "start": "run-p -l type-check:watch start:dev start:server",
+    "start": "run-p -l type-check:watch start:dev",
     "start:dev": "vite --port 8080",
-    "start:server": "cd server && npm run mock-server",
     "prebuild": "npm run type-check",
     "build": "vite build",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "postinstall": "cd ./server && npm install"
+    "type-check:watch": "npm run type-check -- --watch"
   },
   "imports": {
     "#*": "./src/*"

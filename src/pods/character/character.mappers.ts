@@ -12,5 +12,4 @@ export const mapCharacterFromApiToVm = (
   image: character.image,
   origin: character.origin.name,
   location: character.location.name,
-  bestSentence: character.bestSentence ?? '',
 });

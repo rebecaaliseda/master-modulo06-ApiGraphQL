@@ -14,6 +14,4 @@ export interface CharacterEntityApi {
   location: {
     name: string;
   };
-
-  bestSentence?: string;
 }

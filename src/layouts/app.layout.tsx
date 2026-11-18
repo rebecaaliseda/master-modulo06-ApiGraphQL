@@ -9,8 +9,6 @@ import Box from '@mui/material/Box';
 import { switchRoutes } from '#core/router';
 import * as classes from './app.layout.styles';
 import GroupIcon from '@mui/icons-material/Group';
-import PublicIcon from '@mui/icons-material/Public';
-import TvIcon from '@mui/icons-material/Tv';
 
 interface Props {
   children: React.ReactNode;
@@ -41,24 +39,6 @@ export const AppLayout: React.FC<Props> = (props) => {
               startIcon={<GroupIcon />}
             >
               Characters
-            </Button>
-
-            <Button
-              color="inherit"
-              component={Link}
-              to={switchRoutes.locations}
-              startIcon={<PublicIcon />}
-            >
-              Locations
-            </Button>
-
-            <Button
-              color="inherit"
-              component={Link}
-              to={switchRoutes.episodes}
-              startIcon={<TvIcon />}
-            >
-              Episodes
             </Button>
           </Box>
         </Toolbar>
